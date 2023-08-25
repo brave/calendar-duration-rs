@@ -1,0 +1,16 @@
+[package]
+name = "calendar-duration"
+authors = ["Darnell Andries <dandries@brave.com>"]
+description = "A library containing a calendar respecting time duration."
+repository = "https://github.com/brave-experiments/calendar-duration-rs"
+license = "MPL-2.0"
+keywords = ["time", "duration"]
+categories = ["date-and-time"]
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+time = "0.3"
+
+[dev-dependencies]
+time = { version = "0.3", features = ["formatting", "parsing"] }
