@@ -8,6 +8,7 @@ fn add_years(mut time: OffsetDateTime, years: i32) -> OffsetDateTime {
     loop {
         match time.replace_year(time.year() + years) {
             Err(_) => {
+                assert_ne!(time.day(), 1);
                 // year replacement failed because current day does not exist
                 // in month of replaced year (i.e. February).
                 // decrement current day and try again.
@@ -38,7 +39,7 @@ fn add_months(mut time: OffsetDateTime, months: i16) -> OffsetDateTime {
         time = add_years(time, years_delta.into());
     }
     let target_month = if months < 0 {
-        time.month().nth_prev(months.abs() as u8)
+        time.month().nth_prev(months.unsigned_abs() as u8)
     } else {
         time.month().nth_next(months as u8)
     };
