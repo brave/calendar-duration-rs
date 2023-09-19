@@ -39,12 +39,12 @@ jobs:
             token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Format
-        uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
+        uses: actions-rs/cargo@9e120dd99b0fbad1c065f686657e914e76bd7b72
         with:
           command: fmt
           args: --check
 
       - name: Build/Test
-        uses: actions-rs/cargo@ae10961054e4aa8b4aa7dffede299aaf087aa33b
+        uses: actions-rs/cargo@9e120dd99b0fbad1c065f686657e914e76bd7b72
         with:
           command: test
